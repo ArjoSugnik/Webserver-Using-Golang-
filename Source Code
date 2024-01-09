@@ -23,5 +23,5 @@ func aboutHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func contactHandler(w http.ResponseWriter, r *http.Request) {
-    fmt.Fprintf(w, "You can contact us at contact@example.com.")
+    fmt.Fprintf(w, "You can contact us at sugnik.11sc.2020@gmail.com.")
 }
