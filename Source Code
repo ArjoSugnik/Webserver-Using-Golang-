@@ -1,0 +1,27 @@
+package main
+
+import (
+    "fmt"
+    "net/http"
+)
+
+func main() {
+    http.HandleFunc("/", homeHandler)
+    http.HandleFunc("/about", aboutHandler)
+    http.HandleFunc("/contact", contactHandler)
+
+    fmt.Println("Server is running on http://localhost:8080")
+    http.ListenAndServe(":8080", nil)
+}
+
+func homeHandler(w http.ResponseWriter, r *http.Request) {
+    fmt.Fprintf(w, "Welcome to the home page!")
+}
+
+func aboutHandler(w http.ResponseWriter, r *http.Request) {
+    fmt.Fprintf(w, "This is the about page.")
+}
+
+func contactHandler(w http.ResponseWriter, r *http.Request) {
+    fmt.Fprintf(w, "You can contact us at contact@example.com.")
+}
